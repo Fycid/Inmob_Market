@@ -6,6 +6,7 @@ class Productos(models.Model):
 
 	class Meta:
 		db_table:"productos"
-
+	
 	def _str_(self):
 		return self.nombre
+	

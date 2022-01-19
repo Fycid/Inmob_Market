@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+
+
+{% block contenido %}
+	<div class="row" style="padding:10px;">
+		<div class="col">
+			<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>	
+		</div>
+	</div>
+	
+	<table class="table table-success table-striped">
+		  <thead>
+		    <tr>
+		      <th scope="col">Id</th>
+		      <th scope="col">Nombre</th>
+		      <th>precio</th>
+		      <th scope="col">Acciones</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    {% for p in productos  %}
+		    	<tr>
+			      <th scope="row">{{p.id}}</th>
+			      <td>{{p.nombre}}</td>
+			      <td>{{p.precio}}</td>
+			   	</tr>
+		    {% endfor %}
+		  </tbody>
+	</table>
+
+	
+{% endblock contenido %}
