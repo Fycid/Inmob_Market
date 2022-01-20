@@ -10,6 +10,6 @@ class Usuario (AbstractUser):
     class Meta:
         db_table:"usuarios"
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.first_name} {self.last_name}"
 

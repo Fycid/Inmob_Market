@@ -6,15 +6,14 @@ from .forms 				import ProductoForm
 
 
 def detalle (request):
-	context = {		
-	}
+	context = {}
 	return render(request,"productos/detalle.html",context )
 
 
 class ListarAdmin (ListView):
 	template_name="productos/admin/listar.html"
 	model = Productos
-	contex_object_name="productos"
+	context_object_name="productos"
 
 
 	"""
