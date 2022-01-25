@@ -23,11 +23,15 @@
         <!-- method="POST" NO MUESTRA Y method="GET" MUESTRA LA INFO> -->
     <body>
       <form class="form-signin" method="POST">{% csrf_token %}
+
+
         <div class="text-center mb-4">
           <!--<img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">-->
           <h1 class="h3 mb-3 font-weight-normal">Inciar Sesion</h1>
           <p>Sitio de compra y venta Inmobiliaria </p>
         </div>
+
+        {% include "include/form_errors.html" %}
 
         <div class="form-label-group">
           <input type="text" id="inputUsername" class="form-control" placeholder="Ingrese nombre de usuario" required="" autofocus="" name="username">

@@ -7,13 +7,13 @@ from .forms 				import ProductoForm
 
 def detalle (request):
 	context = {}
-	return render(request,"productos/detalle.html",context )
+	return render(request, "productos/detalle.html", context )
 
 
 class ListarAdmin (ListView):
-	template_name="productos/admin/listar.html"
+	template_name= "productos/admin/listar.html"
 	model = Productos
-	context_object_name="productos"
+	context_object_name= "productos"
 
 
 	"""
@@ -27,5 +27,5 @@ class NuevoAdmin(CreateView):
 	model = Productos
 	form_class = ProductoForm
 
-	def get_success_url(**Kwargs):
+	def get_success_url(self, **kwargs):
 		return reverse_lazy("productos : admin_listar")
