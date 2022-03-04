@@ -1,6 +1,10 @@
-from django.shortcuts 		import render
-from django.views.generic 	import ListView, CreateView
-from django.urls 			import reverse_lazy
+from django.shortcuts 			import render
+from django.urls 				import reverse_lazy
+from django.views.generic 		import ListView, CreateView
+from django.views.generic.edit 	import UpdateView
+
+
+
 from .models 				import Productos
 from .forms 				import ProductoForm
 
@@ -24,6 +28,14 @@ class ListarAdmin (ListView):
 
 class NuevoAdmin(CreateView):
 	template_name= "productos/admin/nuevo.html"
+	model = Productos
+	form_class = ProductoForm
+
+	def get_success_url(self, **kwargs):
+		return reverse_lazy("productos : admin_listar")
+
+class EditarAdmin(UpdateView):
+	template_name= "productos/admin/editar.html"
 	model = Productos
 	form_class = ProductoForm
 
