@@ -13,6 +13,7 @@
 						<li><a href="{% url 'logout' %}" class="text-white">Cerrar sesion</a></li>
 					{% else %}
 						<li><a href="{% url 'login' %}" >Iniciar sesion</a></li>
+						<li> <a href="{% url 'usuario:registrarme' %}">Registrarse</a></li>
 					{% endif %}
 		            <!--
 		            <li><a href="#" class="text-white">Follow on Twitter</a></li>

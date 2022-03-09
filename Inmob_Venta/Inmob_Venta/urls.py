@@ -27,5 +27,6 @@ urlpatterns = [
     path('logout/',auth_views.logout_then_login, name="logout"),
 
     #Includes
-    path("Producto/",include('apps.productos.urls'))
+    path("Producto/",include('apps.productos.urls')),
+    path("Usuario/",include('apps.usuarios.urls'))
     ]

@@ -1,7 +1,7 @@
 from django.shortcuts 			import render
 from django.urls 				import reverse_lazy
 from django.views.generic 		import ListView, CreateView
-from django.views.generic.edit 	import UpdateView
+from django.views.generic.edit 	import UpdateView, DeleteView
 
 
 
@@ -20,11 +20,11 @@ class ListarAdmin (ListView):
 	context_object_name= "productos"
 
 
-	"""
+	
 	def get_queryset(self):
 		#self.request
-		return Productos.objects.filter(id=2)
-	"""
+		return Productos.objects.all().order_by("id")
+	
 
 class NuevoAdmin(CreateView):
 	template_name= "productos/admin/nuevo.html"
@@ -41,3 +41,4 @@ class EditarAdmin(UpdateView):
 
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("productos : admin_listar")
+
