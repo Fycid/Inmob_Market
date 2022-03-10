@@ -32,7 +32,7 @@ class NuevoAdmin(CreateView):
 	form_class = ProductoForm
 
 	def get_success_url(self, **kwargs):
-		return reverse_lazy("productos : admin_listar")
+		return reverse_lazy("productos:admin_listar")
 
 class EditarAdmin(UpdateView):
 	template_name= "productos/admin/editar.html"
@@ -40,5 +40,5 @@ class EditarAdmin(UpdateView):
 	form_class = ProductoForm
 
 	def get_success_url(self, **kwargs):
-		return reverse_lazy("productos : admin_listar")
+		return reverse_lazy("productos:admin_listar")
 

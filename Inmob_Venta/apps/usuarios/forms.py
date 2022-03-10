@@ -4,9 +4,15 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UsuarioForm(UserCreationForm):
-	#password = forms.CharField(widget=forms.PasswordInput())
-	#nombre = forms.CharField(label="Nombre del Producto",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese el nombre del producto"}))
+	
+	username = forms.CharField(label="Usurario",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese su nombre de usuario"}))
+	first_name = forms.CharField(label="Nombre",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese su nombre "}))
+	last_name = forms.CharField(label="Apellido",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese su Apellido "}))
+	email = forms.CharField(label="Email",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese su email "}))
+	dni = forms.CharField(label="DNI",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese su DNI "}))
 
+	#password = forms.CharField(widget=forms.PasswordInput())
+	
 
 	class Meta:
 		model = Usuario

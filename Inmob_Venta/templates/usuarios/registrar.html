@@ -4,7 +4,9 @@
 	<h1>Ingrese sus datos</h1>
 	<form method="POST">{% csrf_token %}
 		{% include "include/form_errors.html" %}
-		{{form.as_p}}
+		<!--{{form.username.label}}-->
+		<!--{{form.username}}-->
+		{% include "include/forms.html" %}
 		<div class="row" style="padding:10px;">
 			<div class="col">
 				<button type='submit' class="btn btn-outline-success">Registrarme</button>

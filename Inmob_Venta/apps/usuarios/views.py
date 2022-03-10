@@ -11,4 +11,4 @@ class Registrarme(CreateView):
 	form_class = UsuarioForm
 
 	def get_success_url(self, **kwargs):
-		return reverse_lazy("productos : admin_listar")
+		return reverse_lazy("login")
