@@ -1,7 +1,7 @@
-from django import forms
+from django 					import forms
+from django.core.exceptions		import ValidationError
+from django.contrib.auth.forms 	import UserCreationForm
 from . models import Usuario
-from django.contrib.auth.forms import UserCreationForm
-
 
 class UsuarioForm(UserCreationForm):
 	
@@ -17,3 +17,11 @@ class UsuarioForm(UserCreationForm):
 	class Meta:
 		model = Usuario
 		fields = ["username", "first_name","last_name","email" , "dni"]
+
+		#validadciones 
+	def clean_username(self):
+		username = self.cleaned_data["username"]
+
+		if  "12" not in username :
+			raise ValidationError(" El nombre de usuario de incluir un numero 12")
+		return username

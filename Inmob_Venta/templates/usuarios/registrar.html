@@ -1,5 +1,7 @@
 {% extends "base/base.html" %}
-
+{% block Menu %}
+	
+{% endblock Menu %}
 {% block contenido %}
 	<h1>Ingrese sus datos</h1>
 	<form method="POST">{% csrf_token %}
@@ -8,7 +10,7 @@
 		<!--{{form.username}}-->
 		{% include "include/forms.html" %}
 		<div class="row" style="padding:10px;">
-			<div class="col">
+			<div class="col" style="padding:30px;">
 				<button type='submit' class="btn btn-outline-success">Registrarme</button>
 				<a href="{% url 'inicio' %}" class="btn btn-outline-danger">Cancelar</a>
 			</div>
