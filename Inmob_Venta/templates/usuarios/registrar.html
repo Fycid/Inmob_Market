@@ -1,7 +1,14 @@
 {% extends "base/base.html" %}
-{% block Menu %}
-	
-{% endblock Menu %}
+	{% block Menu %}
+		
+	{% endblock Menu %}
+	{% block footer %}
+			
+	{% endblock footer %}
+
+	{% block portada %}
+		
+	{% endblock portada %}
 {% block contenido %}
 	<h1>Ingrese sus datos</h1>
 	<form method="POST">{% csrf_token %}

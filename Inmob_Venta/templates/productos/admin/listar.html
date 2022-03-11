@@ -2,9 +2,29 @@
 
 
 {% block contenido %}
-	<div class="row" style="padding:10px;">
+
+	{% block Menu %}
+		
+	{% endblock Menu %}
+	{% block footer %}
+			
+	{% endblock footer %}
+
+	{% block portada %}
+		
+	{% endblock portada %}
+		<section class="py-5 text-center container">
+		    <div class="row py-lg-5">
+		      <div class="col-lg-6 col-md-8 mx-auto">
+		        <h1 class="fw-light">Listado de propiedades </h1>
+		      </div>
+		    </div>
+		</section>
+	
+	<div class="row" style="padding:20px;">
 		<div class="col">
 			<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
+			<a href="{% url 'inicio' %}" class="btn btn-outline-primary">Inicio</a>
 		</div>
 	</div>
 	
@@ -22,7 +42,7 @@
 		    	<tr>
 			      <th scope="row">{{p.id}}</th>
 			      <td>{{p.nombre}}</td>
-			      <td>${{p.precio}}</td>
+			      <td>$ {{p.precio}}</td>
 			      <td>
 			      	<a href="">Ver</a>
 			      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>
@@ -32,6 +52,5 @@
 		    {% endfor %}
 		  </tbody>
 	</table>
-
-	
 {% endblock contenido %}
+	

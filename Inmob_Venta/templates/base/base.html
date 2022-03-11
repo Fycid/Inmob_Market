@@ -47,8 +47,10 @@
 		{% include "base/header.html" %}
 
 		<main>
-
-		  {% include "base/portada.html" %}
+			{% block portada %}
+				{% include "base/portada.html" %}
+			{% endblock portada %}
+		  
 
 			<div class="album py-5 bg-light">
 				<div class="container">
@@ -67,12 +69,11 @@
 						        <li class="nav-item">
 						          <a class="nav-link" href="#">Catalogo</a>
 						        </li>
-						        
-						        <li class="nav-item">
-									{% if user.is_authenticated %}
-						          		<a class="nav-link" href="{% url 'productos:admin_listar' %}">Productos</a>
-									{% endif %}
-						        </li>
+						        {% if user.is_authenticated %}
+							        <li class="nav-item">
+										<a class="nav-link" href="{% url 'productos:admin_listar' %}">Productos</a>
+							        </li>
+						        {% endif %}
 						        <!--
 						        <li class="nav-item">
 						          <a class="nav-link disabled">Disabled</a>
@@ -90,8 +91,10 @@
 			</div>
 
 		</main>
-
-			{% include "base/footer.html" %}
+			{% block footer %}
+				{% include "base/footer.html" %}
+			{% endblock footer %}
+			
 
 
 	    	<!-- JavaScript Bundle with Popper -->

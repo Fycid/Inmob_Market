@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins	import LoginRequiredMixin #para que se authentique el usuario
 from django.shortcuts 			import render
 from django.urls 				import reverse_lazy
 from django.views.generic 		import ListView, CreateView
@@ -14,7 +15,7 @@ def detalle (request):
 	return render(request, "productos/detalle.html", context )
 
 
-class ListarAdmin (ListView):
+class ListarAdmin (LoginRequiredMixin,ListView):
 	template_name= "productos/admin/listar.html"
 	model = Productos
 	context_object_name= "productos"
