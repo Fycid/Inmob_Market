@@ -72,7 +72,10 @@
 						        {% if user.is_authenticated %}
 							        <li class="nav-item">
 										<a class="nav-link" href="{% url 'productos:admin_listar' %}">Productos</a>
-							        </li>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="{% url 'usuario:listar' %}">Lista de Usuarios</a>
+									</li>
 						        {% endif %}
 						        <!--
 						        <li class="nav-item">

@@ -1,7 +1,6 @@
 {% extends "base/base.html" %}
 
 {% block contenido %}
-
 	<form method="POST">{% csrf_token %}
 		{% include "include/form_errors.html" %}
 
@@ -10,7 +9,7 @@
 		<div class="row" style="padding:10px;">
 			<div class="col">
 				<button type='submit' class="btn btn-outline-success">Guardar</button>
-				<a class="btn btn-outline-danger" href="{% url 'productos:admin_listar' %}" >Cancelar</a>
+				<a class="btn btn-outline-danger" href="{% url 'usuario:listar' %}" >Cancelar</a>
 			</div>
 		</div>
 	</form>
