@@ -1,29 +1,13 @@
 from django.shortcuts 			import render
-
+from django.contrib.auth.decorators import login_required #basado en funcion
 from django.views.generic.base  import TemplateView
 
 from apps.productos.models 		import Productos
 
+
 """
-def inicio (request):
-	productos = Productos.objects.all()
-
-	usuario = {
-
-		"nombre": "Fabian",
-		"apellido": "Cid"	
-	}
-
-	context = {
-		"usuario": usuario,
-		"productos":productos
-	}
-	return render(request,"inicio.html", context)
-
-def login (request):
-	return render(request,"login.html")
-
-#Inicio basado en funcion 
+#Inicio basado en funcion
+#@login_required
 def inicio (request):
 	context = {		
 		"productos":Productos.objects.all()
