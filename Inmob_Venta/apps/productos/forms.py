@@ -6,4 +6,4 @@ class ProductoForm(forms.ModelForm):
 	detalle = forms.CharField(label="Detalle  del Producto",widget=forms.TextInput(attrs={"class":"form-control", "placeholder":"Ingrese el detalle del producto"}))
 	class Meta:
 		model = Productos
-		fields = ["nombre","precio","detalle"]
+		fields = ["nombre","precio","detalle","Categorias","imagen"]

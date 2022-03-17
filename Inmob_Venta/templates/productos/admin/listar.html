@@ -47,9 +47,12 @@
 			      <td>{{p.nombre}}</td>
 			      <td>$ {{p.precio}}</td>
 			      <td>{{p.detalle}}</td>
+			      <td>{{p.Categorias.nombre}}</td>
+			      	<!--
 			      	{% for c in p.Categorias.all  %}
 						<td>{{c.nombre}}</td>
 					{% endfor %}
+					-->
 			      <td>
 			      	<a href="">Ver</a>
 			      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>

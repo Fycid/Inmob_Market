@@ -18,10 +18,10 @@ class Productos(models.Model):
 	precio = models.DecimalField(max_digits=10,decimal_places=2)
 	detalle = models.CharField(max_length=250, null=True)
 
-	Categorias = models.ManyToManyField(Categorias)#RELACION n A n
+	#Categorias = models.ManyToManyField(Categorias)#RELACION n A n
+	Categorias = models.ForeignKey(Categorias,on_delete=models.CASCADE,null=True)#RELACION n A  1 
 
-	
-	#Categorias = models.ForeingnKey(Categorias, on_delette=models.CASCADE, null=True)#RELACION n A  1 
+	imagen = models.ImageField(upload_to="productos", null=True)
 
 	class Meta:
 		db_table:"productos"
