@@ -10,6 +10,8 @@ urlpatterns = [
     path("Admin/Listar/", views.ListarAdmin.as_view(), name="admin_listar"),
     path("Admin/Nuevo/", views.NuevoAdmin.as_view(), name = "admin_nuevo"),
     path("Admin/Editar/<int:pk>/", views.EditarAdmin.as_view(), name = "admin_editar"),
+
+    path("Mis_productos/",views.MisProductos.as_view(), name="Mis_procductos"),
   
 
 ]
