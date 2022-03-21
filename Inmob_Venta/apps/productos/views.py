@@ -20,11 +20,17 @@ class ListarAdmin (LoginRequiredMixin,AdminRequiredMixins,ListView):
 	model = Productos
 	context_object_name= "productos"
 
+	def get_context_data(self, ** kwargs):
+		context = super (ListarAdmin, self).get_context_data(** kwargs)
+		context ["nombre_buscado"] = self.request.GET.get("nombre_producto","")
+		return context
 
-	
 	def get_queryset(self):
-		#self.request
-		return Productos.objects.all().order_by("id")
+		busqueda_nombre = self.request.GET.get("nombre_producto","")
+		query = Productos.objects.all().order_by("nombre")
+		if len(busqueda_nombre) > 0:
+			query = query.filter(nombre__icontains=busqueda_nombre)
+		return query 
 
 class MisProductos (LoginRequiredMixin,AdminRequiredMixins,ListView):
 	template_name= "productos/admin/listar.html"

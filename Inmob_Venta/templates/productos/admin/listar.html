@@ -27,7 +27,16 @@
 			<a href="{% url 'inicio' %}" class="btn btn-outline-primary">Inicio</a>
 		</div>
 	</div>
-	
+	<form class="form-inline my-2 my-lg-0" style="padding:50px;" method="GET">
+	 	<div class="row">
+	 		<div class="col-md-10">
+	 			<input class="form-control mr-sm-2" name = "nombre_producto" type="search" placeholder="Ingrese el nombre de la propiedad...." aria-label="search" value="{{nombre_buscado}}">
+	 		</div>
+	 		<div class="col-md-2">
+				<button class="btn btn-outline-dark" type="submit">Buscar</button>
+			</div>
+		</div>
+    </form>
 	<table class="table table-success table-striped">
 		  <thead>
 		    <tr>
