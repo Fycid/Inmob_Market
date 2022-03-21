@@ -19,6 +19,8 @@ class ListarAdmin (LoginRequiredMixin,AdminRequiredMixins,ListView):
 	template_name= "productos/admin/listar.html"
 	model = Productos
 	context_object_name= "productos"
+	paginate_by=2
+
 
 	def get_context_data(self, ** kwargs):
 		context = super (ListarAdmin, self).get_context_data(** kwargs)
