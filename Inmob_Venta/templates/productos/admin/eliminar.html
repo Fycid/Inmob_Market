@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+
+{% block contenido %}
+	
+		    
+	<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+		{% include "include/form_errors.html" %}
+
+
+		{{form.as_p}}
+	
+		<table class="table table-success table-striped">
+		  <thead>
+		    <tr>
+		    <th scope="col">Id</th>
+		      <th scope="col">Nombre</th>
+		      <th scope="col">Precio</th>
+		      <th scope="col">Detalle</th>
+		      <th scope="col">Estado</th>
+		      <th scope="col">Categorias</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+
+		    	<tr>
+			      <th scope="row">{{productos.id}}</th>
+			      <td>{{productos.nombre}}</td>
+			      <td>$ {{productos.precio}}</td>
+			      <td>{{productos.detalle}}</td>
+			      <td>{{productos.Estado.nombre}}</td>
+			      <td>{{productos.Categorias.nombre}}</td>
+			    </tr>
+		  </tbody>
+		</table>
+		<div class="row" style="padding:10px;">
+			<div class="col">
+				<button type='submit' class="btn btn-outline-danger">Eliminar</button>
+				<a class="btn btn-outline-primary" href="{% url 'productos:admin_listar' %}" >Cancelar</a>
+			</div>
+		</div>
+	</form>
+{% endblock contenido %}

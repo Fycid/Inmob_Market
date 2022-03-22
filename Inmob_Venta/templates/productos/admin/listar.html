@@ -31,7 +31,9 @@
 				<button class="btn btn-outline-dark" type="submit">Buscar</button>
 			</div>
 		</div>
+
     </form>
+    {% include "base/menu.html" %}
     <div class="row" style="padding:20px;">
 		<div class="col">
 			<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
@@ -45,6 +47,7 @@
 		      <th scope="col">Nombre</th>
 		      <th scope="col">Precio</th>
 		      <th scope="col">Detalle</th>
+		      <th scope="col">Estado</th>
 		      <th scope="col">Categorias</th>
 		      <th scope="col">Acciones</th>
 		    </tr>
@@ -57,6 +60,7 @@
 			      <td>{{p.nombre}}</td>
 			      <td>$ {{p.precio}}</td>
 			      <td>{{p.detalle}}</td>
+			      <td>{{p.Estado.nombre}}</td>
 			      <td>{{p.Categorias.nombre}}</td>
 			      	<!--
 			      	{% for c in p.Categorias.all  %}
@@ -66,7 +70,7 @@
 			      <td>
 			      	<a href="">Ver</a>
 			      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>
-			      	<a href="">Eliminar</a>
+			      	<a href="{% url 'productos:admin_eliminar' p.id %}">Eliminar</a>
 			      </td>
 			   	</tr> 
 		    {% endfor %}

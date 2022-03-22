@@ -1,7 +1,33 @@
 {% extends "base/base.html" %}
 
 {% block contenido %}
+	<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
 
+				<div class="col ">
+
+						<img src="{{productos.imagen.url}}"class="bd-placeholder-img card-img-top" width="100%" height="225">
+					
+					<div class="card shadow-sm">
+						
+						<div class="card-body">
+								<p class="card-text">
+									{{productos.nombre}}
+								</p>
+								<h2> 
+								 	<span class="badge rounded-pill bg-dark" > $ {{productos.precio}}</span>
+								</h2>
+								
+								
+								<p>
+									<span class="badge rounded-pill bg-primary">{{productos.Categorias.nombre}}</span>
+									<span class=" badge rounded-pill bg-info">{{productos.Estado.nombre}}</span>
+								</p>
+							<div class="d-flex justify-content-between align-items-center">
+							</div>
+						</div>
+					</div>
+				</div>
+			
 
 	
 {% endblock contenido %}

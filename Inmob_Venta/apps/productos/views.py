@@ -19,7 +19,7 @@ class ListarAdmin (LoginRequiredMixin,AdminRequiredMixins,ListView):
 	template_name= "productos/admin/listar.html"
 	model = Productos
 	context_object_name= "productos"
-	paginate_by=2
+	paginate_by=3
 
 
 	def get_context_data(self, ** kwargs):
@@ -64,5 +64,12 @@ class EditarAdmin(UpdateView):
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("productos:admin_listar")
 
+class EliminarAdmin(DeleteView):
+	template_name= "productos/admin/eliminar.html"
+	model = Productos
+	form_class = ProductoForm
+
+	def get_success_url(self, **kwargs):
+		return reverse_lazy("productos:admin_listar")
 
 
