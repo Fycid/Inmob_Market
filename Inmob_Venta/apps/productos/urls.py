@@ -4,7 +4,7 @@ from .                   import views
 app_name = "productos"
 
 urlpatterns = [
-    path('Detalle/', views.detalle, name = "detalle"),
+    path('Detalle/<int:pk>/', views.Detalle.as_view(), name = "detalle"),
     
     #admini
     path("Admin/Listar/", views.ListarAdmin.as_view(), name="admin_listar"),

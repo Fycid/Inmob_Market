@@ -26,7 +26,7 @@ class Estado(models.Model):
 class Productos(models.Model):
 	nombre = models.CharField(max_length=250)
 	precio = models.DecimalField(max_digits=10,decimal_places=2)
-	detalle = models.CharField(max_length=250, null=True)
+	detalle = models.TextField( default="")
 	
 
 	#Categorias = models.ManyToManyField(Categorias)#RELACION n A n

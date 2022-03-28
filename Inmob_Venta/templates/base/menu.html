@@ -13,6 +13,7 @@
 		         		 <a class="btn btn-outline-secondary" href="{% url 'inicio'  %}">Catalogo</a>
 		        	</li>
 			        {% if user.is_authenticated %}
+					       
 				        <li class="nav-item">
 							<a class="btn btn-outline-secondary" href="{% url 'productos:admin_listar' %}">Productos</a>
 						</li>
