@@ -57,7 +57,7 @@ class NuevoAdmin(LoginRequiredMixin,AdminRequiredMixins,CreateView):
 		f.usuario_id = self.request.user.id
 		return super(NuevoAdmin, self).form_valid(form)
 
-class EditarAdmin(UpdateView):
+class EditarAdmin(LoginRequiredMixin,AdminRequiredMixins,UpdateView):
 	template_name= "productos/admin/editar.html"
 	model = Productos
 	form_class = ProductoForm
@@ -65,7 +65,7 @@ class EditarAdmin(UpdateView):
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("productos:admin_listar")
 
-class EliminarAdmin(DeleteView):
+class EliminarAdmin(LoginRequiredMixin,AdminRequiredMixins,DeleteView):
 	template_name= "productos/admin/eliminar.html"
 	model = Productos
 	form_class = ProductoForm

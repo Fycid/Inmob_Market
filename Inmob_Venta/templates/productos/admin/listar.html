@@ -67,7 +67,7 @@
 					{% endfor %}
 					-->
 			      <td>
-			      	<a href="">Ver</a>
+			      	<a href="{% url 'productos:detalle' p.id %}">Ver</a>
 			      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>
 			      	<a href="{% url 'productos:admin_eliminar' p.id %}">Eliminar</a>
 			      </td>

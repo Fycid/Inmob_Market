@@ -1,25 +1,22 @@
 {% extends "base/base.html" %}
-	{% block Menu %}
-		
-	{% endblock Menu %}
-	{% block portada %}
-		
-	{% endblock portada %}
+{% block Menu %}
+{% endblock Menu %}
+{% block portada %}
+{% endblock portada %}
 {% block contenido %}
 
-	<section class="py-5 text-center container">
+		<section class="py-5 text-center container" >
 		    <div class="row py-lg-5">
 		      <div class="col-lg-6 col-md-8 mx-auto">
 		      	{% include "base/alerta.html" %}
-		      	<div class="alert alert-danger d-flex align-items-center" role="alert">
+		      	<div class="alert alert-warning d-flex align-items-center" role="alert">
 					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/>
 					  </svg>  
 				  <div>
-				    <h1 >Ustede esta por eliminar </h1>
-		        	<h1  >{{productos.nombre}}  </h1>
+				    <h1 class="fw-light">Usted esta por eliminar al usuario </h1>
+		       		<h1>{{object.first_name }} {{object.last_name}}</h1>
 				  </div>
 				</div>
-		       
 		      </div>
 		    </div>
 		</section>
@@ -31,32 +28,31 @@
 		{{form.as_p}}
 	
 		<table class="table table-success table-striped">
+			{% include "base/menu.html" %}
 		  <thead>
 		    <tr>
-		    <th scope="col">Id</th>
+		      <th scope="col">Id</th>
 		      <th scope="col">Nombre</th>
-		      <th scope="col">Precio</th>
-		      <th scope="col">Detalle</th>
-		      <th scope="col">Estado</th>
-		      <th scope="col">Categorias</th>
+		      <th scope="col">Usuario</th>
+		      <th scope="col">dni</th>
+		      <th scope="col">email</th>
 		    </tr>
 		  </thead>
 		  <tbody>
 
 		    	<tr>
-			      <th scope="row">{{productos.id}}</th>
-			      <td>{{productos.nombre}}</td>
-			      <td>$ {{productos.precio}}</td>
-			      <td>{{productos.detalle}}</td>
-			      <td>{{productos.Estado.nombre}}</td>
-			      <td>{{productos.Categorias.nombre}}</td>
+			      <th scope="row">{{object.id}}</th>
+			      <td>{{object.first_name }} {{object.last_name}}</td>
+			      <td> {{object.username}}</td>
+			      <td> {{object.dni}}</td>
+			      <td> {{object.email}}</td>
 			    </tr>
 		  </tbody>
 		</table>
 		<div class="row" style="padding:10px;">
 			<div class="col">
 				<button type='submit' class="btn btn-outline-danger">Eliminar</button>
-				<a class="btn btn-outline-primary" href="{% url 'productos:admin_listar' %}" >Cancelar</a>
+				<a class="btn btn-outline-primary" href="{% url 'usuario:listar' %}" >Cancelar</a>
 			</div>
 		</div>
 	</form>

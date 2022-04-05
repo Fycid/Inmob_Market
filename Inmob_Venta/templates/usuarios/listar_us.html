@@ -20,10 +20,10 @@
 	
 	<div class="row" style="padding:20px;">
 		<div class="col">
-			<a href="{% url 'inicio' %}" class="btn btn-outline-primary">Inicio</a>
+			{% include "base/menu.html" %}
 		</div>
 	</div>
-	
+	 	
 	<table class="table table-success table-striped">
 		  <thead>
 		    <tr>
@@ -45,8 +45,8 @@
 			      <td> {{u.email}}</td>
 			      <td>
 			      	<a> </a>
-			      	<a href="">Editar</a>
-			      	<a href="">Eliminar</a>
+			      	<a href="{% url 'usuario:editar' u.id %}">Editar</a>
+			      	<a href="{% url 'usuario:elimina' u.id %}">Eliminar</a>
 			      </td>
 			   	</tr> 
 		    {% endfor %}

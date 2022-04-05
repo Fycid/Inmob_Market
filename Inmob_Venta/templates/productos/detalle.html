@@ -1,22 +1,36 @@
 {% extends "base/base.html" %}
 {% load static %}
+	{% block portada %}
+		
+	{% endblock portada %}
+
 {% block contenido %}
 	
+	<section class="py-5 text-center container">
+	    <div class="row py-lg-5">
+	      <div class="col-lg-6 col-md-8 mx-auto">
+	        <h1 class="fw-light">{{object.nombre }} </h1>
+	      </div>
+	    </div>
+	</section>
 	<div class="card mb-3" >
 		  <div class="row g-0">
 			    <div class="col-md-4">
-			    	{% if Object.imagen %}
-			    		<img src="{{Object.imagen.url}}" class="img-fluid rounded-start" >
+			    	{% if object.imagen %}
+			    		<img src="{{object.imagen.url}}" class="img-fluid rounded-start" >
 					{% else %}
-						<img src= "{% static 'imagen/default/default-image.jpg' %}"class="bd-placeholder-img card-img-top" width="100%" height="225">
+						<img src= "{% static 'imagen/default/default-image.jpg' %}"class="bd-placeholder-img card-img-top" >
 					{% endif %}
 			    </div>
-			    <div class="col-md-8">
+			    <div class="col-md-5">
 			      <div class="card-body">
-			        <h5 class="card-title">{{object.nombre}}</h5>
+			        <h5 class="card-title">{{object.nombre}} </h5>
 			        <p class="card-text">{{object.detalle}}.</p>
-			        <p class="card-text"><small class="text-muted">{{objet.}}</small></p>
+			        <p class="card-text"><small> <span class="badge bg-info text-dark">{{object.Categorias.nombre}}</span> </small></p>
 			      </div>
+			    </div>
+			    <div class="col-md-1">
+			      	<h1 style="padding:30px;"><span class="badge bg-secondary">${{object.precio}}</span></h1>
 			    </div>
 		  </div>
 	</div>
