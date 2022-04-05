@@ -7,10 +7,10 @@
 	{% endblock footer %}
 
 	{% block portada %}
-		
+		<h1>Ingrese sus datos</h1>
 	{% endblock portada %}
 {% block contenido %}
-	<h1>Ingrese sus datos</h1>
+	
 	<form method="POST">{% csrf_token %}
 		{% include "include/form_errors.html" %}
 		<!--{{form.username.label}}-->

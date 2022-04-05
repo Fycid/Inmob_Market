@@ -1,5 +1,20 @@
 {% extends "base/base.html" %}
-
+{% block portada %}
+		<section class="py-5 text-center container">
+		    <div class="row py-lg-5">
+		      <div class="col-lg-6 col-md-8 mx-auto">
+		      	{% include "include/alert.html" %}
+		      	<div class="alert alert-primary d-flex align-items-center" role="alert">
+				  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+				  <div>
+					   <h1 class="py-1 text-center container">Esta ediatando</h1>
+			        	<h1 class="py-1 text-center container">{{object.first_name }} {{object.last_name}}  </h1>
+				  </div>
+				</div>
+		      </div>
+		    </div>
+		</section>
+	{% endblock portada %}
 {% block contenido %}
 	<form method="POST">{% csrf_token %}
 		{% include "include/form_errors.html" %}

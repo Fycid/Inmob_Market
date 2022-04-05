@@ -1,18 +1,18 @@
 {% extends "base/base.html" %}
 {% load static %}
 	{% block portada %}
-		
+		<section class="py-5 text-center container">
+		    <div class="row py-lg-5">
+		      <div class="col-lg-6 col-md-8 mx-auto">
+		        <h1 class="fw-light">{{object.nombre }} </h1>
+		      </div>
+		    </div>
+		</section>
 	{% endblock portada %}
 
 {% block contenido %}
 	
-	<section class="py-5 text-center container">
-	    <div class="row py-lg-5">
-	      <div class="col-lg-6 col-md-8 mx-auto">
-	        <h1 class="fw-light">{{object.nombre }} </h1>
-	      </div>
-	    </div>
-	</section>
+	
 	<div class="card mb-3" >
 		  <div class="row g-0">
 			    <div class="col-md-4">

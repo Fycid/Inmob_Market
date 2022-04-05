@@ -3,14 +3,10 @@
 		
 	{% endblock Menu %}
 	{% block portada %}
-		
-	{% endblock portada %}
-{% block contenido %}
-
-	<section class="py-5 text-center container">
+		<section class="py-5 text-center container">
 		    <div class="row py-lg-5">
 		      <div class="col-lg-6 col-md-8 mx-auto">
-		      	{% include "base/alerta.html" %}
+		      	{% include "include/alert.html" %}
 		      	<div class="alert alert-danger d-flex align-items-center" role="alert">
 					  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/>
 					  </svg>  
@@ -23,6 +19,10 @@
 		      </div>
 		    </div>
 		</section>
+	{% endblock portada %}
+{% block contenido %}
+
+	
 
 	<form method="POST" enctype="multipart/form-data">{% csrf_token %}
 		{% include "include/form_errors.html" %}
