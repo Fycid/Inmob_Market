@@ -7,15 +7,33 @@
 	{% endblock footer %}
 
 	{% block portada %}
-		<h1>Ingrese sus datos</h1>
+	<section class="py-5 text-center container">
+	    <div class="row py-lg-5">
+	      <div class="col-lg-6 col-md-8 mx-auto">
+			  <div>
+				   <h1 class="py-1 text-center container">Ingrese sus datos</h1>
+		        	
+			  </div>
+			</div>
+	      </div>
+	    </div>
+	</section>
 	{% endblock portada %}
 {% block contenido %}
-	
+	<div style="border: solid #084298;  
+	padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;">
+    	{{form.as_p}}
+
+	</div>	
 	<form method="POST">{% csrf_token %}
 		{% include "include/form_errors.html" %}
 		<!--{{form.username.label}}-->
 		<!--{{form.username}}-->
-		{% include "include/forms.html" %}
 		<div class="row" style="padding:10px;">
 			<div class="col" style="padding:30px;">
 				<button type='submit' class="btn btn-outline-success">Registrarme</button>

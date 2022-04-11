@@ -16,11 +16,9 @@
 		</section>
 	{% endblock portada %}
 {% block contenido %}
+{% include "include/form_errors.html" %}
 	<form method="POST">{% csrf_token %}
-		{% include "include/form_errors.html" %}
-
-		{{form.as_p}}
-		
+			{% include "include/forms.html" %}
 		<div class="row" style="padding:10px;">
 			<div class="col">
 				<button type='submit' class="btn btn-outline-success">Guardar</button>

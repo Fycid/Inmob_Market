@@ -8,7 +8,7 @@ from django.views.generic.detail 	import DetailView
 from django.urls 					import reverse_lazy
 
 
-from  .forms 					import UsuarioForm
+from  .forms 					import UsuarioForm, UsuarioEdit
 from  .models 					import Usuario
 
 
@@ -38,10 +38,13 @@ class BorrarUser(LoginRequiredMixin,AdminRequiredMixins,DeleteView):
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("usuarios:listar")
 
-class EditarUser(LoginRequiredMixin,AdminRequiredMixins,UpdateView):
+class EditarUser(LoginRequiredMixin,UpdateView):
 	template_name= "usuarios/editar_us.html"
 	model = Usuario
-	form_class = UsuarioForm
+	form_class = UsuarioEdit
+
+	def get_object(self,queryset=None):
+		return self.request.user
 
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("usuarios:listar")
