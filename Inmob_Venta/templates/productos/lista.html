@@ -51,26 +51,18 @@
 		  	
 		    {% for p in productos  %}
 		    	<tr>
-				      <th scope="row">{{p.id}}</th>
-				      <td>{{p.nombre}}</td>
-				      <td>$ {{p.precio}}</td>
-				      <td>{{p.detalle}}</td>
-				      <td>{{p.Estado.nombre}}</td>
-				      <td>{{p.Categorias.nombre}}</td>
-			      	<!--
-			      	{% for c in p.Categorias.all  %}
-						<td>{{c.nombre}}</td>
-					{% endfor %}
-					-->
+					<th scope="row">{{p.id}}</th>
+					<td>{{p.nombre}}</td>
+					<td>$ {{p.precio}}</td>
+					<td>{{p.detalle}}</td>
+					<td>{{p.Estado.nombre}}</td>
+					<td>{{p.Categorias.nombre}}</td>
 					<td>
-				      	<a href="{% url 'productos:detalle' p.id %}">Ver</a>
-				      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>
-				      	<a href="{% url 'productos:admin_eliminar' p.id %}">Eliminar</a>
-				    </td>
+						<a href="{% url 'productos:detalle' p.id %}">Ver</a>
+					</td>
 			   	</tr> 
 		    {% endfor %}
 		  </tbody>
 	</table>
 	{% include "include/paginador.html" %}
 {% endblock contenido %}
-	

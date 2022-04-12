@@ -78,3 +78,21 @@ class Detalle(DetailView):
 	template_name= "productos/detalle.html"
 	model = Productos
 
+class Listar(ListView):
+	template_name= "productos/lista.html"
+	model = Productos
+	context_object_name= "productos"
+	paginate_by=3
+
+
+	def get_context_data(self, ** kwargs):
+		context = super (Listar, self).get_context_data(** kwargs)
+		context ["nombre_buscado"] = self.request.GET.get("nombre_producto","")
+		return context
+
+	def get_queryset(self):
+		busqueda_nombre = self.request.GET.get("nombre_producto","")
+		query = Productos.objects.all().order_by("nombre")
+		if len(busqueda_nombre) > 0:
+			query = query.filter(nombre__icontains=busqueda_nombre)
+		return query 
