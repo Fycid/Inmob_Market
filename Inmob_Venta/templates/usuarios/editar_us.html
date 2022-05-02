@@ -16,14 +16,13 @@
 		</section>
 	{% endblock portada %}
 {% block contenido %}
-{% include "include/form_errors.html" %}
-	<form method="POST">{% csrf_token %}
-			{% include "include/forms.html" %}
-		<div class="row" style="padding:10px;">
-			<div class="col">
-				<button type='submit' class="btn btn-outline-success">Guardar</button>
-				<a class="btn btn-outline-danger" href="{% url 'usuario:listar' %}" >Cancelar</a>
-			</div>
-		</div>
-	</form>
+			{% include "include/form_errors.html" %}
+				<form method="POST">{% csrf_token %}
+						{% include "include/forms.html" %}
+					<div class="row" style="padding:10px;">
+						<div class="col">
+						<button type='submit' class="btn btn-outline-success">Guardar</button>
+						<a class="btn btn-outline-danger" href="{% url 'usuario:listar' %}" >Cancelar</a>
+					</div>
+				</form>
 {% endblock contenido %}

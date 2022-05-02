@@ -1,4 +1,12 @@
-{% extends "base/base.html" %}
+{% extends "base/base.html" %}	
+		{% if user.es_administrador %}
+				<div class="row" style="padding:20px;">	
+					<div class="col">
+						<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
+					</div>
+				</div>
+	
+ 		{% endif %}
 
 	{% block Menu %}
 		
@@ -30,11 +38,16 @@
 
     </form>
     {% include "base/menu.html" %}
-    <div class="row" style="padding:20px;">
-		<div class="col">
-			<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
+
+		<div class="row" style="padding:20px;">	
+			<div class="col">
+				<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
+			</div>
 		</div>
-	</div>
+
+		
+
+    
 	<table class="table table-success table-striped">
 		  <thead>
 		    <tr>
@@ -64,8 +77,8 @@
 					-->
 					<td>
 				      	<a href="{% url 'productos:detalle' p.id %}">Ver</a>
-				      	<a href="{% url 'productos:admin_editar' p.id %}">Editar</a>
-				      	<a href="{% url 'productos:admin_eliminar' p.id %}">Eliminar</a>
+				      	<a href="{% url 'productos:admin_editar' p.id %}"class="link-success">Editar</a>
+				      	<a href="{% url 'productos:admin_eliminar' p.id %}"class="link-danger">Eliminar</a>
 				    </td>
 			   	</tr> 
 		    {% endfor %}

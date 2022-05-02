@@ -24,7 +24,7 @@ class ListarUser(AdminRequiredMixins,LoginRequiredMixin,ListView):
 	template_name = "usuarios/listar_us.html"
 	model = Usuario
 	context_object_name= "usuarios"
-	paginate_by=1
+	paginate_by=2
 
 
 	def get_queryset(self):
@@ -47,3 +47,22 @@ class EditarUser(LoginRequiredMixin,UpdateView):
 	
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("usuario:listar")
+
+
+class MiUser(LoginRequiredMixin,ListView):
+	template_name = "usuarios/mi_us/mi_user.html"
+	model = Usuario
+	context_object_name= "usuarios"
+
+
+	def get_queryset(self):
+		self.request
+
+class EditarMiUser(LoginRequiredMixin,UpdateView):
+	template_name= "usuarios/mi_us/editar_mi_us.html"
+	model = Usuario
+	form_class = UsuarioEdit
+	
+	def get_success_url(self, **kwargs):
+		return reverse_lazy("usuario:mi_usuario")
+	

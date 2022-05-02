@@ -30,11 +30,7 @@
 
     </form>
     {% include "base/menu.html" %}
-    <div class="row" style="padding:20px;">
-		<div class="col">
-			<a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo</a>
-		</div>
-	</div>
+
 	<table class="table table-success table-striped">
 		  <thead>
 		    <tr>
@@ -58,7 +54,7 @@
 					<td>{{p.Estado.nombre}}</td>
 					<td>{{p.Categorias.nombre}}</td>
 					<td>
-						<a href="{% url 'productos:detalle' p.id %}">Ver</a>
+						<a href="{% url 'productos:detalle' p.id %}" class="link-success">Ver</a>
 					</td>
 			   	</tr> 
 		    {% endfor %}

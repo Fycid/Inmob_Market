@@ -10,7 +10,9 @@
 		<section class="py-5 text-center container">
 		    <div class="row py-lg-5">
 		      <div class="col-lg-6 col-md-8 mx-auto">
-		        <h1 class="fw-light">Listado de Usuarios  </h1>
+		        <h1 class="text-success">
+		        	<div class="fst-italic">Listado de Usuarios</div>  
+		        </h1>
 		      </div>
 		    </div>
 		</section>
@@ -46,8 +48,8 @@
 			      <td> {{u.email}}</td>
 			      <td>
 			      	<a> </a>
-			      	<a href="{% url 'usuario:editar' u.id %}">Editar</a>
-			      	<a href="{% url 'usuario:elimina' u.id %}">Eliminar</a>
+			      	<a href="{% url 'usuario:editar' u.id %}"class="link-success">Editar</a>
+			      	<a href="{% url 'usuario:elimina' u.id %}"class="link-danger">Eliminar</a>
 			      </td>
 			   	</tr> 
 		    {% endfor %}
