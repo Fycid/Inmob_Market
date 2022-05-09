@@ -21,7 +21,14 @@ class Estado(models.Model):
 	def __str__(self):
 		return self.nombre
 
+ESTADO_CHOICE= (
+	(1, "En Venta"),
+	(2, "Reservado"),
+	(3,"Vendido"),
+	(4, "En Alquiler"),
+	(5, "Alquilado")
 
+	)
 
 class Productos(models.Model):
 	nombre = models.CharField(max_length=250)
@@ -33,7 +40,8 @@ class Productos(models.Model):
 	Categorias = models.ForeignKey(Categorias,on_delete=models.CASCADE,null=True)#RELACION n A  1 
 	
 	usuario= models.ForeignKey(Usuario,on_delete=models.CASCADE,null=True)
-	Estado = models.ForeignKey(Estado,on_delete=models.CASCADE,null=True)
+	#Estado = models.ForeignKey(Estado,on_delete=models.CASCADE,null=True)
+	Estado = models.IntegerField(choices=ESTADO_CHOICE,default=1)
 	imagen = models.ImageField(upload_to="productos", null=True)
 
 	class Meta:
