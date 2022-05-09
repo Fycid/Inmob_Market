@@ -17,6 +17,7 @@ def inicio (request):
 """
 class Inicio(TemplateView):
 	template_name = "inicio.html" 
+	
 
 	
 	def get_context_data(self, ** kwargs):

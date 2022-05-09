@@ -39,6 +39,8 @@ class MisProductos (LoginRequiredMixin,AdminRequiredMixins,ListView):
 	template_name= "productos/admin/listar.html"
 	model = Productos
 	context_object_name= "productos"
+	paginate_by=1
+
 
 	def get_queryset(self):
 		return Productos.objects.filter(usuario_id=self.request.user.id)
@@ -48,6 +50,7 @@ class NuevoAdmin(LoginRequiredMixin,AdminRequiredMixins,CreateView):
 	template_name= "productos/admin/nuevo.html"
 	model = Productos
 	form_class = ProductoForm
+
 
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("productos:admin_listar")

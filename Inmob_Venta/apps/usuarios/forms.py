@@ -18,7 +18,7 @@ class UsuarioForm(UserCreationForm):
 	class Meta:
 		model = Usuario
 		fields = ["username", "first_name","last_name","email" , "dni"]
-		"""
+	"""
 		#validadciones 
 	def clean_username(self):
 		username = self.cleaned_data["username"]

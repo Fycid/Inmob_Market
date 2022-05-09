@@ -33,5 +33,13 @@
 			      	<h1 style="padding:30px;"><span class="badge bg-secondary">${{object.precio}}</span></h1>
 			    </div>
 		  </div>
+
 	</div>
+		{% if user.is_authenticated %}
+        	{% if user.es_administrador %}
+					<a type="button" class="btn btn-info" href="{% url 'productos:admin_listar' %}">Volver</a>
+			{% else %}
+					<a type="button" class="btn btn-info" href="{% url 'productos:listar' %}">Volver</a>
+			{% endif %}
+        {% endif %}
 {% endblock contenido %}
